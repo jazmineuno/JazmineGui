@@ -2,7 +2,7 @@ Jazmine Blockchain
 
 See https://jazmine.io/ for info.
 
-This is JazminneGUI. The front-end GUI for Jazmined and JazmineWalletd, configured to build using Visual Studio C++
+This is JazmineGUI. The front-end GUI for Jazmined and JazmineWalletd, configured to build using Visual Studio C++
 
 NOTE: mining is temporarily disabled in this version, until some code issues are resolved. If you 
 want to mine jazmine, please use the Linux version.
@@ -11,7 +11,7 @@ Also multiple addresses are not yet supported in this version. If you want multi
 
 This is not yet production quality, there are some issues. The software functions as intended but use with care.
 Do not use special characters in password, yet. Make sure you can close and restart the program and access the 
-wallet before adding tokens.
+wallet before adding tokens. Try small transactions at first.
 
 This software starts three server processes listening on localhost (127.0.0.1). The ports are psuedo-randomized, 
 the software will look for an open port to use for each service. This minimizes issues with security.
