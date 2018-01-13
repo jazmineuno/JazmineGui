@@ -10,6 +10,8 @@ want to mine jazmine, please use the Linux version.
 Also multiple addresses are not yet supported in this version. If you want multiple addresses please use the Linux version.
 
 This is not yet production quality, there are some issues. The software functions as intended but use with care.
+Do not use special characters in password, yet. Make sure you can close and restart the program and access the 
+wallet before adding tokens.
 
 This software starts three server processes listening on localhost (127.0.0.1). The ports are psuedo-randomized, 
 the software will look for an open port to use for each service. This minimizes issues with security.
@@ -45,6 +47,8 @@ Install-Package CefSharp.WinForms -Version 57.0.0
 You will need to copy the jazmine-php directory to your exe/build directory.
 
 You will also need a version of php for windows, extract the zip file and put in the exe/build directory. 
+
+ALSO: you need Jazmined.exe and JazmineWalletd.exe copied to your exe/build directory.
 
 Copy the php.ini file in the jazmine-php directory to the php directory.
 
