@@ -8,6 +8,8 @@ $a_info = json_decode($info,true);
 $height = $a_info['height'];
 
 $address = $_REQUEST['address'];
+if (!array_key_exists('show',$_REQUEST)) $_REQUEST['show']='';
+
 $content = '<h1>Jazmine Blockchain</h1>
 
 <h2>Transactions</h2>
@@ -27,8 +29,12 @@ $content = '<h1>Jazmine Blockchain</h1>
 </div>
 
 
-<p><a href="home.php?t='.time().'">Return To Account Summary</a> &middot; <a href="/trxn.php?address='.urlencode($address).'&amp;t='.time().'">Refresh This Page</a></p>
+<p><a href="home.php?t='.time().'">Return To Account Summary</a> &middot; <a href="/trxn.php?address='.urlencode($address).'&amp;t='.time().'&amp;show='.$_REQUEST['show'].'">Refresh This Page</a></p>
+';
 
+if ($_REQUEST['show']=='T')
+{
+	$content .= '
 <p><em>Note: if transactions below are displayed incorrectly (ie, zero when it should not be) you must wait for the blockchain to synchronize.</em></p>
 <table border="1" cellspacing="0" cellpadding="3" width="100%">
 ';
@@ -92,5 +98,8 @@ foreach ($tx['transfers'] as $l=>$m)
 $content .= '
 </table>
 ';
+} else {
+	$content .= '<p><a href="/trxn.php?address='.urlencode($address).'&amp;t='.time().'&amp;show=T">Display Transactions</a></p>';
+}
 
 echo output($content,$layout);

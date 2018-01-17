@@ -42,11 +42,20 @@
             this.jazminedlog = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.jazminewalletlog = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coldWalletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -99,10 +108,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1030, 452);
+            this.tabControl1.Size = new System.Drawing.Size(1030, 428);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -111,7 +120,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1022, 426);
+            this.tabPage1.Size = new System.Drawing.Size(1022, 402);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Accounts";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -121,7 +130,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 420);
+            this.panel1.Size = new System.Drawing.Size(1016, 396);
             this.panel1.TabIndex = 0;
             // 
             // tabPage2
@@ -130,7 +139,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1022, 426);
+            this.tabPage2.Size = new System.Drawing.Size(1022, 402);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Jazmined Log";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -142,7 +151,7 @@
             this.jazminedlog.Multiline = true;
             this.jazminedlog.Name = "jazminedlog";
             this.jazminedlog.ReadOnly = true;
-            this.jazminedlog.Size = new System.Drawing.Size(1016, 420);
+            this.jazminedlog.Size = new System.Drawing.Size(1016, 396);
             this.jazminedlog.TabIndex = 0;
             this.jazminedlog.WordWrap = false;
             // 
@@ -151,7 +160,7 @@
             this.tabPage3.Controls.Add(this.jazminewalletlog);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1022, 426);
+            this.tabPage3.Size = new System.Drawing.Size(1022, 402);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "JazmineWallet Log";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -163,9 +172,71 @@
             this.jazminewalletlog.Multiline = true;
             this.jazminewalletlog.Name = "jazminewalletlog";
             this.jazminewalletlog.ReadOnly = true;
-            this.jazminewalletlog.Size = new System.Drawing.Size(1022, 426);
+            this.jazminewalletlog.Size = new System.Drawing.Size(1022, 402);
             this.jazminewalletlog.TabIndex = 1;
             this.jazminewalletlog.WordWrap = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1030, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backupToolStripMenuItem,
+            this.coldWalletToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.backupToolStripMenuItem.Text = "Backup";
+            // 
+            // coldWalletToolStripMenuItem
+            // 
+            this.coldWalletToolStripMenuItem.Name = "coldWalletToolStripMenuItem";
+            this.coldWalletToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.coldWalletToolStripMenuItem.Text = "Cold Wallet";
+            this.coldWalletToolStripMenuItem.Click += new System.EventHandler(this.coldWalletToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem,
+            this.aboutToolStripMenuItem1});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem.Text = "Help";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.helpToolStripMenuItem.Text = "Documentation";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.aboutToolStripMenuItem1.Text = "About";
             // 
             // Form1
             // 
@@ -174,8 +245,11 @@
             this.ClientSize = new System.Drawing.Size(1030, 474);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Jazmine Gui - jazmine.io";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -186,6 +260,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +282,14 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox jazminewalletlog;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coldWalletToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
     }
 }
 

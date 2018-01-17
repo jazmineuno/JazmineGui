@@ -27,6 +27,7 @@ $content .='
 <p><a href="/trxn.php?address='.htmlentities($from).'&amp;t='.time().'">Return To Transactions</a> &middot; <a href="/home.php?t='.time().'">Account Summary</a></p>
 ';
 
+$nothing = save_wallet($wallet_port);
 
 echo output($content,$layout);
 

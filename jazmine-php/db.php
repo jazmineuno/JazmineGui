@@ -44,6 +44,25 @@ function get_info($sp)
 	return ($res);
 }
 
+function save_wallet($wp)
+{
+	if ($wp<1) return;
+	$host = '127.0.0.1:'.$wp;
+	$uri = '/json_rpc';
+	$req=array();
+	$req['method']='save';
+	$req['jsonrpc']='2.0';
+	$d=json_encode($req);
+	$ch = curl_init($host.$uri);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $d);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($d)));
+	$res = curl_exec($ch);
+	return ($res);
+}
+
+
 function get_address($wp)
 {
 	if ($wp<1) return;

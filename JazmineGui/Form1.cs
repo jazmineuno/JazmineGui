@@ -60,7 +60,9 @@ namespace JazmineGui
             statusStrip1.Refresh();
 
             path = Directory.GetCurrentDirectory();
+            demangle();
             
+
 
             Process[] pname = Process.GetProcessesByName("Jazmined");
 
@@ -77,6 +79,8 @@ namespace JazmineGui
 
             wallet_port = FreeTcpPort();
             Console.WriteLine("Wallet port: " + wallet_port);
+
+
 
             if (!File.Exists(path + "\\jazmine.bin.wallet"))
             {
@@ -115,6 +119,30 @@ namespace JazmineGui
             }
 
             timer1.Enabled = true;
+        }
+
+        private void demangle()
+        {
+            string rn = DateTime.Now.ToString("yyyMMddHHmmss");
+            string[] files = Directory.GetFiles(path, "jazmine.bin.wallet.*");
+            if (files.Length > 1)
+            {
+                int cnt = 0;
+                foreach (string file in files)
+                {
+                    cnt++;
+                    if (cnt==files.Length)
+                    {
+                        System.IO.File.Move(file, path + "\\jazmine.bin.wallet");
+                    } else
+                    {
+                        System.IO.File.Move(file, file + "." + rn);
+                    }
+
+                    //Console.WriteLine(file);
+
+                }
+            }
         }
 
         private void launchlogs()
@@ -337,30 +365,49 @@ namespace JazmineGui
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coldWalletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColdWallet cs = new ColdWallet();
+            cs.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
             try
             {
-                Wallet_process.Close();
-            } catch (Exception we)
+                Wallet_process.Kill();
+            }
+            catch (Exception we)
             {
                 Console.WriteLine("Could not terminate wallet daemon. " + we.Message);
             }
 
             try
             {
-                Jazmined_process.Close();
-            } catch (Exception je)
+                Jazmined_process.Kill();
+            }
+            catch (Exception je)
             {
                 Console.WriteLine("Could not terminate Jazmine daemon. " + je.Message);
             }
 
             try
             {
-                PHP_process.Close();
-            } catch (Exception pe)
-            {
-                Console.WriteLine("Could not terminate wallet daemon. " + pe.Message);
+                PHP_process.Kill();
             }
-
+            catch (Exception pe)
+            {
+                Console.WriteLine("Could not terminate PHP daemon. " + pe.Message);
+            }
+            Thread.Sleep(3000);
             ts.Cancel();
             w_ts.Cancel();
 

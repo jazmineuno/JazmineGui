@@ -35,7 +35,9 @@ $content = '
 <h1>Jazmine Blockchain</h1>
 <p><a href="home.php?time='.time().'">Reload Information</a> '.gmdate('Y-m-d').'T'.gmdate('His').'Z</p>
 
-<h2>Accounts</h2><!--<div style="float:right;width:200px;text-align:right;"><a href="/newaddress.php">Create New Address</a></div>-->
+<div style="float:right;width:200px;text-align:right;"><form method="post" action="/newaddress.php"><button type="submit">Create New Address</button></form></div>
+<div style="float:left;"><h2>Accounts</h2></div>
+
 <div class="tt" style="clear:both;">
 <div class="tr"><div class="td">Address</div><div class="td r">Amount</div><div class="td r">Pending</div></div>
 ';
