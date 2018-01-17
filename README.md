@@ -7,8 +7,6 @@ This is JazmineGUI. The front-end GUI for Jazmined and JazmineWalletd, configure
 NOTE: mining is temporarily disabled in this version, until some code issues are resolved. If you 
 want to mine jazmine, please use the Linux version.
 
-Also multiple addresses are not yet supported in this version. If you want multiple addresses please use the Linux version.
-
 This is not yet production quality, there are some issues. The software functions as intended but use with care.
 Do not use special characters in password, yet. Make sure you can close and restart the program and access the 
 wallet before adding tokens. Try small transactions at first.
