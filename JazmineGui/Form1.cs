@@ -136,7 +136,11 @@ namespace JazmineGui
                         System.IO.File.Move(file, path + "\\jazmine.bin.wallet");
                     } else
                     {
-                        System.IO.File.Move(file, file + "." + rn);
+                        int len = file.Split('.').Length - 1;
+                        if (len < 5)
+                        {
+                            System.IO.File.Move(file, file + "." + rn);
+                        }
                     }
 
                     //Console.WriteLine(file);
@@ -376,7 +380,8 @@ namespace JazmineGui
         private void coldWalletToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColdWallet cs = new ColdWallet();
-            cs.ShowDialog();
+            cs.setDaemonPort(jazmined_port);
+            cs.Show();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
